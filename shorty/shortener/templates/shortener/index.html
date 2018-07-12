@@ -1,15 +1,42 @@
 <!DOCTYPE html>
 <html>
+<head>
+    <title>Shorty</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+</head>
 <body>
-<h1>Shorty</h1>
 
-{% if short_url %}<p><strong><a href="{{ short_url }}">{{ short_url }}</a></strong></p>{% endif %}
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+        <h1>Shorty</h1>
+    </div>
+    <div class="col-md-2"></div>
+</div>
 
-<form action="{% url 'index' %}" method="post">
-    {% csrf_token %}
-    Url:
-    <input type="text" name="url" {% if url %} value="{{ url }}" {% endif %}><br/>
-    <input type="submit" value="Get short url" />
-</form>
+{% if short_url %}
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+        <div class="alert alert-success">
+            <a href="{{ short_url }}">{{ short_url }}</a>
+        </div>
+    </div>
+</div>
+{% endif %}
+
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+        <form action="{% url 'index' %}" method="post">
+            {% csrf_token %}
+            <label>Url:</label>
+            <input type="text" name="url" {% if url %} value="{{ url }}" {% endif %}>
+            <input type="submit" value="Get short url" />
+        </form>
+    </div>
+    <div class="col-md-2"></div>
+</div>
+
 </body>
 </html>
