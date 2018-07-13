@@ -1,0 +1,12 @@
+language: python
+python:
+  - "3.6"
+install:
+  - pip install -r requirements.txt -r test-requirements.txt
+script:
+  - flake8 shorty
+  - cd shorty && python manage.py test
+
+notifications:
+  email:
+    secure: "MVma9h9b7Q2l0XuoPXvhbWczX6UrPDBmc9EuKE4YBVRPe7aCvgKPCirOwzsx51/AC4LzfYiPRIEd1m7AX16pNnbA38vIh8OqDXjfPXaz9TcIfJbdYJ+LP1mM6ZP/8oPNkXmCD6Y/8OhvbfB2x1Vby01+x/9Ftme0JVJi5Ap1LojGekRipl3e5oF3j1qSGC0p1yrQiBGd12WgNQNPjlZF3LspH7mjSBzDI2J3+mnyEHCprbE4Dy2/LC1SCpQ7DTxOxLxMWvvBlsMucXeu9NxOEj2mbRoiU5jZg9f87+BKx0iqLMORzjTi+7yOOTO/MJx2IruojEzW8TD06Lw3RsfCdvCFoIqY8tYzMlqvTTR0yc3oN0aUN/jqpGhK51s/m2s3RmnCvxat6Ain84xopUGqQJDtRfi6jB1qx0ThkQhcEE1tiXZ4kxxNJScY8Cezcp0IRSLNbTT3EPuQ8dieeXOLPQ3kIbyX+VxUNTzznD0mMYh3AUc2d9+VnliyTtgFp1CKoqWP3uiCKu4Xfkq5n1c9iVfNu4n2hRUo3UpcytVpps8TQEZ4YWN9M6WT/HNRpspc5ZCZ0EjIjJwcVFaUqmTSRjo72BisFzWjvOfn6bNvVbxLcyH5An0xWHWXJbGz/3q/kGgQNpjaq7IzibERTRfdrAE/xi4nzESUBbyPJMfzk9s="
