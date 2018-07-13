@@ -41,7 +41,7 @@
     <div class="col-md-8">
         <form action="{% url 'index' %}" method="post">
             {% csrf_token %}
-            <label>Url:</label>
+            <label>Enter the URL to shorten: </label>
             <input type="text" name="url" {% if url %} value="{{ url }}" {% endif %}>
             <input type="submit" value="Get short url" />
         </form>
